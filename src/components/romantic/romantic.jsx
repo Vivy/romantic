@@ -5,8 +5,15 @@ import { Nav, GlobalStyle, Menu } from '../';
 import Tatoo from '../tatoo/tatoo';
 import Travel from '../travel/travel';
 import { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 
 const Romantic = () => {
+  const [meniu, schimbaMeniu] = useState('car');
+  const handleMenu = (sectiune) => {
+    schimbaMeniu(sectiune);
+    console.log('meniul vietii');
+  };
+
   const dark = {
     firstColor: 'lightblue',
     secondColor: 'lightgreen',
@@ -20,14 +27,12 @@ const Romantic = () => {
   return (
     <ThemeProvider theme={light}>
       <GlobalStyle />
-      <Menu />
-      <h1>asndoajds</h1>
-      <Car />
-      <Drink />
-      <Music />
-      <Tatoo />
-      <Travel />
-      <Nav link='www.google.com' />
+      <Menu functiaHandleMenu={handleMenu} />
+      {meniu === 'car' ? <Car /> : null}
+      {meniu === 'drink' ? <Drink /> : null}
+      {meniu === 'music' ? <Music /> : null}
+      {meniu === 'tatoo' ? <Tatoo /> : null}
+      {meniu === 'travel' ? <Travel /> : null}
     </ThemeProvider>
   );
 };

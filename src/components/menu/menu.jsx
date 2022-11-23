@@ -1,12 +1,15 @@
 import { Nav } from '../nav';
+import * as S from './menu.style';
 
-const Menu = () => {
-  <ul>
-    <Nav> asdad sdsadsaadssdasadsdasda</Nav>
-    <Nav>2</Nav>
-    <Nav>3</Nav>
-    <Nav>4</Nav>
-    <Nav>5</Nav>
-  </ul>;
+const Menu = ({ functiaHandleMenu }) => {
+  return (
+    <S.Menu>
+      <Nav onClick={() => functiaHandleMenu('car')}>Car</Nav>
+      <Nav onClick={() => functiaHandleMenu('drink')}>Drink</Nav>
+      <Nav onClick={() => functiaHandleMenu('music')}>Music</Nav>
+      <Nav onClick={() => functiaHandleMenu('tatoo')}>Tatoo</Nav>
+      <Nav onClick={() => functiaHandleMenu('travel')}>Travel</Nav>
+    </S.Menu>
+  );
 };
 export default Menu;
