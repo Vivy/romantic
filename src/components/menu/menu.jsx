@@ -1,7 +1,7 @@
 import { Nav } from '../nav';
 import * as S from './menu.style';
 
-const Menu = ({ functiaHandleMenu }) => {
+const Menu = ({ functiaHandleMenu, functiaHandleItem }) => {
   return (
     <S.Menu>
       <Nav onClick={() => functiaHandleMenu('car')}>Car</Nav>
