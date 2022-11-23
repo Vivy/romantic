@@ -11,6 +11,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.thirdColor};
   }
 
+  /* .container {
+  padding: 40px;
+  margin-top: 200px;
+  min-height: 200px;
+} */
+
+
 `
 
 export default GlobalStyle

@@ -1,7 +1,7 @@
 import Car from '../car/car';
 import Drink from '../drink/drink';
 import Music from '../music/music';
-import { Nav, GlobalStyle, Menu } from '../';
+import { Nav, GlobalStyle, Menu, Animation } from '../';
 import Tatoo from '../tatoo/tatoo';
 import Travel from '../travel/travel';
 import { ThemeProvider } from 'styled-components';
@@ -33,6 +33,14 @@ const Romantic = () => {
       {meniu === 'music' ? <Music /> : null}
       {meniu === 'tatoo' ? <Tatoo /> : null}
       {meniu === 'travel' ? <Travel /> : null}
+      <button
+        onClick={() => {
+          schimbaMeniu((v) => !v);
+        }}
+      >
+        mount
+      </button>
+      <div className='container'>{meniu ? <Animation /> : ''}</div>
     </ThemeProvider>
   );
 };
