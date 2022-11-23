@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Romantic from './components/romantic/romantic';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+const content = document.querySelector('#aici');
+
+const romantic = <Romantic />;
+
+const root = createRoot(content);
+root.render(romantic);
