@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { Animation } from '../animation';
 import { Container } from '../container';
-import { Imagine } from '../image';
+import { imagine } from '../image/image';
 
 const Car = () => {
   const [carAnim, changeCarAnim] = useState([]);
@@ -11,7 +11,7 @@ const Car = () => {
     from: { x: 0, y: 300, opacity: 0 },
     enter: (item) => async (next) => {
       await next({ x: item.x, y: item.y, opacity: 1, delay: item.delay });
-      // await next({ x: 0 });
+      await next({ x: 0 });
     },
     leave: { x: 100, y: 800, opacity: 0 },
   });
@@ -33,14 +33,28 @@ const Car = () => {
           }
         ></button>
         {transition((style, item) =>
+          imagine.map(({ car }, k) => {
+            return item ? (
+              <animated.div style={style} key={k}>
+                <Animation fundal={car} />
+              </animated.div>
+            ) : (
+              ''
+            );
+          })
+        )}
+
+        {/* {transition((style, item) =>
           item ? (
             <animated.div style={style}>
-              <Animation fundal={Imagine.car} />
+              {imagine.map(({ car }, k) => (
+                <Animation fundal={car} key={k} />
+              ))}
             </animated.div>
           ) : (
             ''
           )
-        )}
+        )} */}
       </Container>
     </div>
   );

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { Animation } from '../animation';
 import { Container } from '../container';
-import { Imagine } from '../image';
+import { imagine } from '../image/image';
 
 const Drink = () => {
   const [drinkAnim, setDrinkAnim] = useState([]);
@@ -32,7 +32,7 @@ const Drink = () => {
       {transition((style, item) =>
         item ? (
           <animated.div style={style}>
-            <Animation fundal={Imagine.drink} />
+            <Animation fundal={imagine.drink} />
           </animated.div>
         ) : (
           ''

@@ -1,1 +1,1 @@
-export { default as Imagine } from './image'
+// export { default as Imagine } from './image'
