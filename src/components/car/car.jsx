@@ -16,35 +16,34 @@ const Car = () => {
     leave: { x: 100, y: 800, opacity: 0 },
   });
   return (
-    <div>
-      <Container>
-        <h2>Which is your favorite car?</h2>
-        <button
-          onClick={() =>
-            changeCarAnim((v) =>
-              v.length
-                ? []
-                : [
-                    { x: -480, y: 20, delay: 200 },
-                    { x: -360, y: -100, delay: 400 },
-                    { x: -240, y: -220, delay: 600 },
-                  ]
-            )
-          }
-        ></button>
-        {transition((style, item) =>
-          imagine.map(({ car }, k) => {
-            return item ? (
-              <animated.div style={style} key={k}>
-                <Animation fundal={car} />
-              </animated.div>
-            ) : (
-              ''
-            );
-          })
-        )}
+    <Container>
+      <h2>Which is your favorite car?</h2>
+      <button
+        onClick={() =>
+          changeCarAnim((v) =>
+            v.length
+              ? []
+              : [
+                  { x: -480, y: 20, delay: 200 },
+                  { x: -360, y: -100, delay: 400 },
+                  { x: -240, y: -220, delay: 600 },
+                ]
+          )
+        }
+      ></button>
+      {transition((style, item) =>
+        imagine.map(({ car }, k) => {
+          return item ? (
+            <animated.div style={style} key={k}>
+              <Animation fundal={car} />
+            </animated.div>
+          ) : (
+            ''
+          );
+        })
+      )}
 
-        {/* {transition((style, item) =>
+      {/* {transition((style, item) =>
           item ? (
             <animated.div style={style}>
               {imagine.map(({ car }, k) => (
@@ -55,8 +54,7 @@ const Car = () => {
             ''
           )
         )} */}
-      </Container>
-    </div>
+    </Container>
   );
 };
 export default Car;

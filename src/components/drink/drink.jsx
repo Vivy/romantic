@@ -30,13 +30,15 @@ const Drink = () => {
         }
       ></button>
       {transition((style, item) =>
-        item ? (
-          <animated.div style={style}>
-            <Animation fundal={imagine.drink} />
-          </animated.div>
-        ) : (
-          ''
-        )
+        imagine.map(({ drink }, k) => {
+          return item ? (
+            <animated.div style={style} key={k}>
+              <Animation fundal={drink} />
+            </animated.div>
+          ) : (
+            ''
+          );
+        })
       )}
     </Container>
   );
