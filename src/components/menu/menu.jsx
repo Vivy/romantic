@@ -4,23 +4,7 @@ import * as S from './menu.style';
 const Menu = ({ functiaHandleMenu }) => {
   return (
     <S.Menu>
-      <Nav
-        onClick={() =>
-          functiaHandleMenu(
-            'car' &&
-              ((v) =>
-                v.length
-                  ? []
-                  : [
-                      { y: -100, delay: 200 },
-                      { y: -50, delay: 400 },
-                      { y: 0, delay: 600 },
-                    ])
-          )
-        }
-      >
-        Car
-      </Nav>
+      <Nav onClick={() => functiaHandleMenu('car')}>Car</Nav>
       <Nav
         onClick={() =>
           functiaHandleMenu(

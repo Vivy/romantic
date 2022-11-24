@@ -12,19 +12,17 @@ const Romantic = () => {
   const [meniu, schimbaMeniu] = useState('');
 
   const transition = useTransition(meniu, {
-    from: { x: -100, y: 800, opacity: 0 },
+    from: { x: 0, y: 800, opacity: 0 },
     enter: (item) => async (next) => {
       await next({ x: item.x, y: item.y, opacity: 1, delay: item.delay });
-      await next({ x: 0 });
+      // await next({ x: 0 });
     },
     leave: { x: 100, y: 800, opacity: 0 },
   });
+
   const handleMenu = (sectiune) => {
     schimbaMeniu(sectiune);
-    console.log(sectiune);
-    console.log(meniu);
   };
-
   const dark = {
     firstColor: 'lightblue',
     secondColor: 'lightgreen',
@@ -34,6 +32,11 @@ const Romantic = () => {
     firstColor: 'lightcoral',
     secondColor: 'lightgreen',
     thirdColor: 'lightblue',
+  };
+
+  const imagine = {
+    car: 'urus.jpg',
+    drink: 'vite.svg',
   };
   return (
     <ThemeProvider theme={light}>
@@ -48,7 +51,7 @@ const Romantic = () => {
         {transition((style, item) =>
           item ? (
             <animated.div style={style}>
-              <Animation />
+              <Animation fundal={imagine.car} />
             </animated.div>
           ) : (
             ''
