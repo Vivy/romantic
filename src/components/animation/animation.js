@@ -6,6 +6,7 @@ const Animation = styled.div`
   margin: 0 auto;
   background-color: blueviolet;
   border-radius: 9px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 8px 24px;
+  /* top: 30px; */
 `
 export default Animation
