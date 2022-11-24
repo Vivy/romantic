@@ -2,7 +2,9 @@ export const imagine = [
   {
     car: 'urus.jpg',
     drink: 'remy.png',
-    music: 'music.jpg'
+    music: 'music.jpg',
+    travel: 'travel.jpg',
+    tatoo: 'tatoo.jpg'
   },
   // {
   //   car: 'car1.jpg',
