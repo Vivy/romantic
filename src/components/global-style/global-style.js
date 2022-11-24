@@ -11,7 +11,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.thirdColor};
   }
 
-
+button {
+  padding: 8px;
+}
 
 `
 
