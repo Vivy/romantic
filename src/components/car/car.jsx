@@ -25,16 +25,16 @@ const Car = () => {
             v.length
               ? []
               : [
-                  { x: -480, y: 20, delay: 200 },
-                  { x: -360, y: -100, delay: 400 },
-                  { x: -240, y: -220, delay: 600 },
+                  { x: -480, y: 20, delay: 200, k: 0 },
+                  { x: -360, y: -100, delay: 400, k: 1 },
+                  { x: -240, y: -220, delay: 600, k: 2 },
                 ]
           )
         }
       ></button>
-      {transition((style, item) =>
+      {transition((style, item, values) =>
         imagine.map(({ car }, k) => {
-          return item ? (
+          return item && values.item.k === k ? (
             <animated.div style={style} key={k}>
               <Animation fundal={car} />
             </animated.div>
@@ -43,19 +43,7 @@ const Car = () => {
           );
         })
       )}
-      {/* {transition((style, item) =>
-          item ? (
-            <animated.div style={style}>
-            {imagine.map(({ car }, k) => (
-              <Animation fundal={car} key={k} />
-              ))}
-              </animated.div>
-              ) : (
-                ''
-                )
-              )} */}
     </Container>
   );
 };
-// console.log(imagine.car, 'asdad');
 export default Car;
