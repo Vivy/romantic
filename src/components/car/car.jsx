@@ -18,7 +18,7 @@ const Car = () => {
   });
   return (
     <Container>
-      <h2>Which is your favorite car?</h2>
+      <h2>Which one is the most romantic car ?</h2>
       <button
         onClick={() =>
           changeCarAnim((v) =>

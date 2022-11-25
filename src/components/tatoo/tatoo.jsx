@@ -22,16 +22,16 @@ const Tatoo = () => {
             v.length
               ? []
               : [
-                  { x: -500, y: 20, delay: 200 },
-                  { x: -300, y: 20, delay: 400 },
-                  { x: -200, y: 20, delay: 600 },
+                  { x: -500, y: 20, delay: 200, k: 0 },
+                  { x: -300, y: 20, delay: 400, k: 1 },
+                  { x: -200, y: 20, delay: 600, k: 2 },
                 ]
           )
         }
       ></button>
-      {transition((style, item) =>
+      {transition((style, item, values) =>
         imagine.map(({ tatoo }, k) => {
-          return item ? (
+          return item && values.item.k === k ? (
             <animated.div style={style} key={k}>
               <Animation fundal={tatoo} />
             </animated.div>

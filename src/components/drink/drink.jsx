@@ -15,23 +15,23 @@ const Drink = () => {
   });
   return (
     <Container>
-      <h2>What is your favorite drink?</h2>
+      <h2>What is the most romantic drink?</h2>
       <button
         onClick={() =>
           setDrinkAnim((v) =>
             v.length
               ? []
               : [
-                  { x: -500, y: 20, delay: 200 },
-                  { x: -300, y: 20, delay: 400 },
-                  { x: -200, y: 20, delay: 600 },
+                  { x: -500, y: 20, delay: 200, k: 0 },
+                  { x: -300, y: 20, delay: 400, k: 1 },
+                  { x: -200, y: 20, delay: 600, k: 2 },
                 ]
           )
         }
       ></button>
-      {transition((style, item) =>
+      {transition((style, item, values) =>
         imagine.map(({ drink }, k) => {
-          return item ? (
+          return item && values.item.k === k ? (
             <animated.div style={style} key={k}>
               <Animation fundal={drink} />
             </animated.div>
