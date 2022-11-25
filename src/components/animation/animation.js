@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Animation = styled.div`
   width: 100px;
   height: 120px;
-  margin: 0 auto;
+  margin: 1rem auto;
   /* background-color: violet; */
   background-size:cover;
   border-radius: 9px;

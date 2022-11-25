@@ -17,3 +17,4 @@ export const imagine = [
   //   music: 'music.jpg'
   // },
 ];
+console.log(imagine.car, 'asdad')

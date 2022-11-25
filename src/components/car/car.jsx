@@ -11,7 +11,8 @@ const Car = () => {
     from: { x: 0, y: 300, opacity: 0 },
     enter: (item) => async (next) => {
       await next({ x: item.x, y: item.y, opacity: 1, delay: item.delay });
-      await next({ x: 0 });
+      await next({ x: 480, y: item.y, opacity: 1, delay: item.delay });
+      await next({ x: 0, y: 100, height: 200, width: 250 });
     },
     leave: { x: 100, y: 800, opacity: 0 },
   });
@@ -42,19 +43,19 @@ const Car = () => {
           );
         })
       )}
-
       {/* {transition((style, item) =>
           item ? (
             <animated.div style={style}>
-              {imagine.map(({ car }, k) => (
-                <Animation fundal={car} key={k} />
+            {imagine.map(({ car }, k) => (
+              <Animation fundal={car} key={k} />
               ))}
-            </animated.div>
-          ) : (
-            ''
-          )
-        )} */}
+              </animated.div>
+              ) : (
+                ''
+                )
+              )} */}
     </Container>
   );
 };
+// console.log(imagine.car, 'asdad');
 export default Car;
