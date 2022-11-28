@@ -6,8 +6,14 @@ import Tatoo from '../tatoo/tatoo';
 import Travel from '../travel/travel';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 
 const Romantic = () => {
+  const animatiaVietii = useSpring({
+    to: [{ opacity: 0, color: 'green' }, { opacity: 1 }],
+
+    from: { opacity: 0, color: 'yellow' },
+  });
   const [meniu, schimbaMeniu] = useState('');
 
   const handleMenu = (sectiune) => {
@@ -26,12 +32,14 @@ const Romantic = () => {
   return (
     <ThemeProvider theme={light}>
       <GlobalStyle />
-      <Menu functiaHandleMenu={handleMenu} />
-      {meniu === 'car' ? <Car /> : null}
-      {meniu === 'drink' ? <Drink /> : null}
-      {meniu === 'music' ? <Music /> : null}
-      {meniu === 'tatoo' ? <Tatoo /> : null}
-      {meniu === 'travel' ? <Travel /> : null}
+      <animated.div style={animatiaVietii}>
+        <Menu functiaHandleMenu={handleMenu} />
+        {meniu === 'car' ? <Car /> : null}
+        {meniu === 'drink' ? <Drink /> : null}
+        {meniu === 'music' ? <Music /> : null}
+        {meniu === 'tatoo' ? <Tatoo /> : null}
+        {meniu === 'travel' ? <Travel /> : null}
+      </animated.div>
     </ThemeProvider>
   );
 };

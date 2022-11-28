@@ -16,6 +16,12 @@ const Drink = () => {
   return (
     <Container>
       <h2>What is the most romantic drink?</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facilis,
+        veritatis hic tempora culpa voluptate, est quis animi temporibus
+        provident quas commodi numquam quaerat nisi id! Voluptatum consequuntur
+        provident optio.
+      </p>
       <button
         onClick={() =>
           setDrinkAnim((v) =>

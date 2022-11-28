@@ -5,6 +5,7 @@ const Container = styled.div`
   /* margin-top:  100px; */
   min-height: 200px;
   text-align: center;
+  /* gap: 2rem; */
 `
 
 export default Container

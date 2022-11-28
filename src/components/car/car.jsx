@@ -1,10 +1,19 @@
 import { useState } from 'react';
-import { useTransition, animated } from 'react-spring';
+import { useTransition, animated, useSpring } from 'react-spring';
 import { Animation } from '../animation';
 import { Container } from '../container';
 import { imagine } from '../image/image';
 
 const Car = () => {
+  const styles = useSpring({
+    loop: true,
+    to: async (next, done) => {
+      await next({ opacity: 1, color: 'red' });
+      await next({ opacity: 0, color: 'blue' });
+    },
+    from: { opacity: 0, color: 'violet' },
+  });
+
   const [carAnim, changeCarAnim] = useState([]);
 
   const transition = useTransition(carAnim, {
@@ -18,7 +27,14 @@ const Car = () => {
   });
   return (
     <Container>
-      <h2>Which one is the most romantic car ?</h2>
+      <animated.div style={styles}>
+        <h2>Which one is the most romantic car ?</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quod
+          quasi velit fuga, facere delectus a omnis quisquam minima laborum est.
+          Voluptatem, vel debitis. Nam iste repudiandae totam sed ut.
+        </p>
+      </animated.div>
       <button
         onClick={() =>
           changeCarAnim((v) =>
@@ -31,7 +47,9 @@ const Car = () => {
                 ]
           )
         }
-      ></button>
+      >
+        Surprise Motherfucker
+      </button>
       {transition((style, item, values) =>
         imagine.map(({ car }, k) => {
           return item && values.item.k === k ? (

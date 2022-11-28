@@ -15,6 +15,15 @@ button {
   padding: 8px;
 }
 
+/* .transition-fade {
+  transition: 3s;
+  opacity: 1;
+}
+
+div.is-animating .transition-fade {
+  opacity: 0.5;
+} */
+
 `
 
 export default GlobalStyle
